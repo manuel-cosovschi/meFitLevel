@@ -12,19 +12,21 @@ export default function InstallPWAInstructions() {
       <ol className="space-y-2 text-sm text-slate-300">
         <li className="flex gap-2">
           <span className="font-bold text-hunter-cyan">1.</span>
-          Abrí esta web en <b>Safari</b>.
+          <span>Abrí esta web en <b>Safari</b>.</span>
         </li>
         <li className="flex gap-2">
           <span className="font-bold text-hunter-cyan">2.</span>
-          Tocá el botón <b>Compartir</b> <span className="text-slate-400">(cuadrado con flecha ↑)</span>.
+          <span>
+            Tocá <b>Compartir</b> <span className="text-slate-400">(el cuadrado con la flecha ↑)</span>.
+          </span>
         </li>
         <li className="flex gap-2">
           <span className="font-bold text-hunter-cyan">3.</span>
-          Elegí <b>“Agregar a pantalla de inicio”</b>.
+          <span>Elegí <b>“Agregar a pantalla de inicio”</b>.</span>
         </li>
         <li className="flex gap-2">
           <span className="font-bold text-hunter-cyan">4.</span>
-          Confirmá. El ícono del Sistema aparece como app.
+          <span>Confirmá. El ícono del Sistema aparece como app.</span>
         </li>
       </ol>
       <p className="mt-3 text-xs text-slate-500">

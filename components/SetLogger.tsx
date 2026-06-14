@@ -31,20 +31,20 @@ function Stepper({
   suffix?: string;
 }) {
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center justify-center gap-1.5">
       <button
         onClick={() => onChange(Math.max(0, round05(value - step)))}
-        className="h-9 w-9 rounded-lg bg-bg-elev text-lg font-bold text-slate-300 active:scale-95"
+        className="flex h-9 w-8 items-center justify-center rounded-lg bg-bg-elev text-xl font-bold text-slate-300 active:scale-95"
       >
         −
       </button>
-      <div className="min-w-[3rem] text-center">
+      <div className="min-w-[2.75rem] text-center leading-none">
         <span className="text-base font-bold text-white">{value}</span>
         {suffix && <span className="text-[10px] text-slate-400">{suffix}</span>}
       </div>
       <button
         onClick={() => onChange(round05(value + step))}
-        className="h-9 w-9 rounded-lg bg-bg-elev text-lg font-bold text-slate-300 active:scale-95"
+        className="flex h-9 w-8 items-center justify-center rounded-lg bg-bg-elev text-xl font-bold text-slate-300 active:scale-95"
       >
         +
       </button>
@@ -79,28 +79,30 @@ export default function SetLogger({
         </span>
       </div>
 
-      <div className="flex items-center justify-between gap-1">
+      <div className="grid grid-cols-[1fr_1fr_auto] items-end gap-2">
         <div className="text-center">
-          <p className="mb-1 text-[9px] uppercase text-slate-500">Peso</p>
+          <p className="mb-1 text-[9px] uppercase tracking-wide text-slate-500">Peso</p>
           <Stepper value={set.actualWeight} step={2.5} suffix="kg" onChange={(v) => onChange({ actualWeight: v })} />
         </div>
         <div className="text-center">
-          <p className="mb-1 text-[9px] uppercase text-slate-500">Reps</p>
+          <p className="mb-1 text-[9px] uppercase tracking-wide text-slate-500">Reps</p>
           <Stepper value={set.actualReps} step={1} onChange={(v) => onChange({ actualReps: v })} />
         </div>
         <div className="text-center">
-          <p className="mb-1 text-[9px] uppercase text-slate-500">RIR</p>
-          <select
-            value={set.actualRir}
-            onChange={(e) => onChange({ actualRir: Number(e.target.value) })}
-            className="h-9 w-12 rounded-lg border border-line bg-bg-soft text-center text-sm font-bold text-white"
-          >
-            {[0, 1, 2, 3, 4, 5].map((r) => (
-              <option key={r} value={r}>
-                {r}
-              </option>
-            ))}
-          </select>
+          <p className="mb-1 text-[9px] uppercase tracking-wide text-slate-500">RIR</p>
+          <div className="relative">
+            <select
+              value={set.actualRir}
+              onChange={(e) => onChange({ actualRir: Number(e.target.value) })}
+              className="h-9 w-14 appearance-none rounded-lg border border-line bg-bg-soft text-center text-base font-bold text-white"
+            >
+              {[0, 1, 2, 3, 4, 5].map((r) => (
+                <option key={r} value={r}>
+                  {r}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
       </div>
 
