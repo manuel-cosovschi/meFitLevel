@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html,
+body {
+  background-color: #070a12;
+  color: #e5e9f0;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+body {
+  /* fondo con leve glow tipo "gate" */
+  background-image:
+    radial-gradient(1000px 500px at 50% -10%, rgba(59, 130, 246, 0.12), transparent 60%),
+    radial-gradient(700px 400px at 100% 0%, rgba(139, 92, 246, 0.1), transparent 55%);
+  background-attachment: fixed;
+  min-height: 100dvh;
+}
+
+@layer utilities {
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .glass {
+    background: rgba(16, 20, 31, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .text-gradient {
+    background: linear-gradient(90deg, #22d3ee, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* Inputs numéricos compactos */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.card {
+  @apply rounded-2xl border border-line bg-bg-card/80 backdrop-blur-sm;
+}
