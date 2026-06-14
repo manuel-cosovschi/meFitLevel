@@ -114,7 +114,7 @@ export default function TodayWorkoutPage() {
   }
 
   return (
-    <div className="space-y-4 pb-24">
+    <div className="space-y-4 pb-44">
       <PageHeader
         title={session.template.name}
         subtitle={session.template.description}
@@ -157,7 +157,7 @@ export default function TodayWorkoutPage() {
       </button>
 
       {/* Barra fija de guardar */}
-      <div className="safe-bottom fixed inset-x-0 bottom-20 z-30 mx-auto w-full max-w-md px-4">
+      <div className="fixed inset-x-0 bottom-[4.5rem] z-30 mx-auto w-full max-w-md bg-gradient-to-t from-bg via-bg/95 to-transparent px-4 pb-2 pt-8">
         <button
           onClick={handleSave}
           className="w-full rounded-2xl bg-gradient-to-r from-hunter-blue to-hunter-violet py-4 text-center font-bold text-white shadow-glow active:scale-[0.98]"
